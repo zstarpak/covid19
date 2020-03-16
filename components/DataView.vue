@@ -28,7 +28,7 @@
               <v-icon
                 class="ExternalLinkIcon"
                 size="15"
-                aria-label="別タブで開く"
+                :aria-label="this.$t('別タブで開く')"
                 role="img"
                 :aria-hidden="false"
               >
@@ -165,8 +165,7 @@ export default class DataView extends Vue {
     if (embed) {
       permalink = permalink + '?embed=true'
     }
-    // localePath にするとうまく動かないので一旦外す
-    // permalink = this.localePath(permalink)
+    permalink = this.localePath(permalink)
 
     if (host) {
       permalink = location.protocol + '//' + location.host + permalink

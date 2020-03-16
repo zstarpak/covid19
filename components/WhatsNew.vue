@@ -21,7 +21,7 @@
             {{ item.date }}
           </time>
           <span class="WhatsNew-list-item-anchor-link">
-            {{ $t(item.text) }}
+            {{ item.text }}
             <v-icon
               v-if="!isInternalLink(item.url)"
               class="WhatsNew-item-ExternalLinkIcon"
@@ -83,12 +83,13 @@ export default {
 
   &-item {
     &-anchor {
-      display: inline-flex;
+      display: inline-block;
       text-decoration: none;
       margin: 5px;
       font-size: 14px;
 
       @include lessThan($medium) {
+        display: flex;
         flex-wrap: wrap;
       }
 
